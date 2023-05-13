@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { Notify } from 'notiflix';
+import axios from 'axios';
 
 export const getArtistByName = async query => {
   try {
