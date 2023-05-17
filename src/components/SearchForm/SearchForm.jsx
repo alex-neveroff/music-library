@@ -1,40 +1,42 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Notify } from 'notiflix';
 
-export default class SearchForm extends Component {
-  state = { query: '' };
+const SearchForm = ({ onSubmit }) => {
+  const [searchQuery, setSearchQuery] = useState('');
 
-  handleChange = event => {
-    const { value } = event.currentTarget;
-    this.setState({ query: value });
+  const handleChange = event => {
+    setSearchQuery(event.currentTarget.value);
   };
 
-  handleSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault();
-    const { query } = this.state;
-    if (query === '') {
+    if (searchQuery === '') {
       Notify.warning(`Enter artist name`);
       return;
     }
-
-    this.props.onSubmit(query);
+    onSubmit(searchQuery);
   };
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <input
-            className="form-input"
-            type="text"
-            name="search"
-            onChange={this.handleChange}
-            value={this.state.query}
-            required
-          />
-        </label>
-        <button type="submit">Search</button>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        <input
+          className="form-input"
+          type="text"
+          name="search"
+          onChange={handleChange}
+          value={searchQuery}
+          required
+        />
+      </label>
+      <button type="submit">Search</button>
+    </form>
+  );
+};
+
+SearchForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
+export default SearchForm;

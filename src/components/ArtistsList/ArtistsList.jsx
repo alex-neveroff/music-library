@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ArtistsList({ artists, query, onClick }) {
+const ArtistsList = ({ artists, query, onClick }) => {
   return (
     <ul>
       {artists
@@ -22,6 +22,6 @@ function ArtistsList({ artists, query, onClick }) {
         ))}
     </ul>
   );
-}
+};
 
 export default ArtistsList;

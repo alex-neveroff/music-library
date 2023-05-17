@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ArtistInfo({ artist }) {
+const ArtistInfo = ({ artist }) => {
   const { name } = artist;
   const {
     'life-span': { begin, ended },
@@ -20,6 +20,6 @@ function ArtistInfo({ artist }) {
       <p>{genre.name}</p>
     </div>
   );
-}
+};
 
 export default ArtistInfo;
