@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-const ArtistsList = ({ artists, query, onClick }) => {
+const ArtistsList = ({ artists, query }) => {
+  const location = useLocation();
+
   return (
     <ul>
       {artists
@@ -9,15 +12,9 @@ const ArtistsList = ({ artists, query, onClick }) => {
         )
         .map(artist => (
           <li key={artist.id}>
-            <a
-              href="./"
-              onClick={event => {
-                event.preventDefault();
-                onClick(artist);
-              }}
-            >
+            <Link to={`${artist.id}`} state={{ from: location }}>
               {artist.name}
-            </a>
+            </Link>
           </li>
         ))}
     </ul>

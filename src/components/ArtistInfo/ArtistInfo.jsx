@@ -6,7 +6,7 @@ const ArtistInfo = ({ artist }) => {
     'life-span': { begin, ended },
   } = artist;
   const { name: country } = artist.area;
-  const genre = artist.tags.reduce((prev, current) => {
+  const genre = artist.genres.reduce((prev, current) => {
     return prev.count > current.count ? prev : current;
   });
 

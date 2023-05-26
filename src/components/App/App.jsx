@@ -1,78 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { Notify } from 'notiflix';
-import { getArtistByName } from 'services/api';
-import ArtistInfo from 'components/ArtistInfo/ArtistInfo';
-import ArtistsList from 'components/ArtistsList/ArtistsList';
-import Footer from 'components/Footer/Footer';
-import Header from 'components/Header/Header';
-import LastReleases from 'components/LastReleases/LastReleases';
-import NearestReleases from 'components/NearestReleases/NearestReleases';
-import SearchForm from 'components/SearchForm/SearchForm';
+import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import Layout from 'components/Layout/Layout';
+
+const Authorization = lazy(() => import('../../pages/Authorization'));
+const ArtistDetails = lazy(() => import('../../pages/ArtistDetails'));
+const Collection = lazy(() => import('../../pages/Collection'));
+const Home = lazy(() => import('../../pages/Home'));
+const Artists = lazy(() => import('../../pages/Artists'));
+const NotFound = lazy(() => import('../../pages/NotFound'));
+const Listened = lazy(() => import('../../pages/Listened'));
+const Pending = lazy(() => import('../../pages/Pending'));
 
 const App = () => {
-  const [artists, setArtists] = useState([]);
-  const [selectedArtist, setSelectedArtist] = useState({});
-  const [query, setQuery] = useState('');
-  const [showDetails, setShowDetails] = useState(false);
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.query.toLowerCase() !== this.state.query.toLowerCase()) {
-  //     this.getArtist();
-  //   }
-  // }
-
-  useEffect(() => {
-    if (query) {
-      const getArtist = async () => {
-        try {
-          const { artists } = await getArtistByName(query);
-          setArtists([...artists]);
-        } catch (error) {
-          Notify.failure(error.message);
-        }
-      };
-
-      getArtist();
-    }
-  }, [query]);
-
-  const handleSubmit = searchQuery => {
-    setQuery(searchQuery);
-    setShowDetails(false);
-  };
-
-  const handleClick = artist => {
-    setSelectedArtist(artist);
-    setShowDetails(true);
-  };
-
   return (
-    <>
-      <Header />
-      <main>
-        <NearestReleases />
-        <section>
-          <SearchForm onSubmit={handleSubmit} />
-          <h1>Music cillection</h1>
-          {showDetails ? (
-            <div>
-              <h2>{selectedArtist.name}</h2>
-              <ArtistInfo artist={selectedArtist} />
-              <div></div>
-            </div>
-          ) : (
-            <ArtistsList
-              artists={artists}
-              query={query}
-              onClick={handleClick}
-            />
-          )}
-        </section>
-
-        <LastReleases />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/artists" element={<Artists />} />
+        <Route path="/artists/:artistId" element={<ArtistDetails />}></Route>
+        <Route path="/collection" element={<Collection />} />
+        <Route path="/listened" element={<Listened />} />
+        <Route path="/pending" element={<Pending />} />
+        <Route path="/authorization" element={<Authorization />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 };
 export default App;
