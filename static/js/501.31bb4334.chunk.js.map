@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/501.31bb4334.chunk.js","mappings":"uJAMA,UAJmB,WACjB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,cACd,C","sources":["pages/Collection.jsx"],"sourcesContent":["import React from 'react';\n\nconst Collection = () => {\n  return <div>Collection</div>;\n};\n\nexport default Collection;\n"],"names":["_jsx","children"],"sourceRoot":""}

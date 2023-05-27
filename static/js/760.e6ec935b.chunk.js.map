@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/760.e6ec935b.chunk.js","mappings":"uJAMA,UAJiB,WACf,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,YACd,C","sources":["pages/Listened.jsx"],"sourcesContent":["import React from 'react';\n\nconst Listened = () => {\n  return <div>Listened</div>;\n};\n\nexport default Listened;\n"],"names":["_jsx","children"],"sourceRoot":""}

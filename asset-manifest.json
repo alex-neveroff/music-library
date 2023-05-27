@@ -1,13 +1,32 @@
 {
   "files": {
     "main.css": "/music-library/static/css/main.b5320759.css",
-    "main.js": "/music-library/static/js/main.1ebb4790.js",
+    "main.js": "/music-library/static/js/main.81011900.js",
+    "static/js/968.4ca36dd6.chunk.js": "/music-library/static/js/968.4ca36dd6.chunk.js",
+    "static/js/332.17dc9fab.chunk.js": "/music-library/static/js/332.17dc9fab.chunk.js",
+    "static/js/501.31bb4334.chunk.js": "/music-library/static/js/501.31bb4334.chunk.js",
+    "static/js/857.f05aa87d.chunk.js": "/music-library/static/js/857.f05aa87d.chunk.js",
+    "static/js/601.bf0babec.chunk.js": "/music-library/static/js/601.bf0babec.chunk.js",
+    "static/js/805.33958f68.chunk.js": "/music-library/static/js/805.33958f68.chunk.js",
+    "static/js/760.e6ec935b.chunk.js": "/music-library/static/js/760.e6ec935b.chunk.js",
+    "static/js/776.61f2b7bd.chunk.js": "/music-library/static/js/776.61f2b7bd.chunk.js",
+    "static/js/307.c86ab225.chunk.js": "/music-library/static/js/307.c86ab225.chunk.js",
+    "static/media/spinner.svg": "/music-library/static/media/spinner.bc1f36a5a25391da768bbb9804c9c557.svg",
     "index.html": "/music-library/index.html",
     "main.b5320759.css.map": "/music-library/static/css/main.b5320759.css.map",
-    "main.1ebb4790.js.map": "/music-library/static/js/main.1ebb4790.js.map"
+    "main.81011900.js.map": "/music-library/static/js/main.81011900.js.map",
+    "968.4ca36dd6.chunk.js.map": "/music-library/static/js/968.4ca36dd6.chunk.js.map",
+    "332.17dc9fab.chunk.js.map": "/music-library/static/js/332.17dc9fab.chunk.js.map",
+    "501.31bb4334.chunk.js.map": "/music-library/static/js/501.31bb4334.chunk.js.map",
+    "857.f05aa87d.chunk.js.map": "/music-library/static/js/857.f05aa87d.chunk.js.map",
+    "601.bf0babec.chunk.js.map": "/music-library/static/js/601.bf0babec.chunk.js.map",
+    "805.33958f68.chunk.js.map": "/music-library/static/js/805.33958f68.chunk.js.map",
+    "760.e6ec935b.chunk.js.map": "/music-library/static/js/760.e6ec935b.chunk.js.map",
+    "776.61f2b7bd.chunk.js.map": "/music-library/static/js/776.61f2b7bd.chunk.js.map",
+    "307.c86ab225.chunk.js.map": "/music-library/static/js/307.c86ab225.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5320759.css",
-    "static/js/main.1ebb4790.js"
+    "static/js/main.81011900.js"
   ]
 }
