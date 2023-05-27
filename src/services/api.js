@@ -24,15 +24,15 @@ export const getArtistDetails = async artistId => {
   }
 };
 
-export const getNearestRealeases = async genre => {
+export const getNearestRealeases = async () => {
   const date = new Date();
   const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const month = date.getMonth().toString().padStart(2, '0');
   const day = date.getDate().toString().padStart(2, '0');
   const today = `${year}-${month}-${day}`;
   try {
     const { data } = await axios.get(
-      `http://musicbrainz.org/ws/2/release-group/?query=genre:power%20AND%20primarytype:album%20AND%20firstreleasedate:[${today} TO *]&fmt=json`
+      `http://musicbrainz.org/ws/2/release-group/?query=tag:("power metal"+OR+"heavy metal")%20AND%20primarytype:album%20AND%20firstreleasedate:[${today} TO *]&fmt=json`
     );
     console.log(data);
     return data;
