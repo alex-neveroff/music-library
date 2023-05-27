@@ -2,7 +2,7 @@ import ArtistsList from 'components/ArtistsList/ArtistsList';
 import SearchForm from 'components/SearchForm/SearchForm';
 import { Notify } from 'notiflix';
 import React, { useEffect, useState } from 'react';
-import { getArtistByName } from 'services/api';
+import { getArtistName } from 'services/api';
 
 const Artists = () => {
   const [query, setQuery] = useState('');
@@ -12,7 +12,7 @@ const Artists = () => {
     if (query) {
       const getArtist = async () => {
         try {
-          const { artists } = await getArtistByName(query);
+          const { artists } = await getArtistName(query);
           setArtists([...artists]);
         } catch (error) {
           Notify.failure(error.message);
@@ -30,7 +30,7 @@ const Artists = () => {
   return (
     <>
       <SearchForm onSubmit={handleSubmit} />
-      <ArtistsList artists={artists} query={query} />
+      <ArtistsList artists={artists} />
     </>
   );
 };
