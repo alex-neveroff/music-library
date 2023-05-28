@@ -18,6 +18,7 @@ export const getArtistDetails = async artistId => {
     const { data } = await axios.get(
       `http://musicbrainz.org/ws/2/artist/${artistId}?inc=genres+release-groups&fmt=json`
     );
+    console.log(data);
     return data;
   } catch (error) {
     Notify.failure(error.message);
@@ -34,7 +35,7 @@ export const getNearestRealeases = async () => {
     const { data } = await axios.get(
       `http://musicbrainz.org/ws/2/release-group/?query=tag:("power metal"+OR+"heavy metal")%20AND%20primarytype:album%20AND%20firstreleasedate:[${today} TO *]&fmt=json`
     );
-    console.log(data);
+
     return data;
   } catch (error) {
     Notify.failure(error.message);
