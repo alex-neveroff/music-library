@@ -4,6 +4,7 @@ export const NearestAlbums = styled.section`
   .pageTitle {
     text-transform: uppercase;
     text-align: center;
+    margin-bottom: 15px;
   }
   .homeList {
     display: flex;

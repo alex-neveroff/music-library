@@ -6,7 +6,6 @@ export const getArtistName = async query => {
     const { data } = await axios.get(
       `http://musicbrainz.org/ws/2/artist/?query=artist:${query}%20AND%20tag:metal&fmt=json`
     );
-    console.log(data);
     return data;
   } catch (error) {
     Notify.failure(error.message);
@@ -31,11 +30,12 @@ export const getNearestRealeases = async () => {
   const month = date.getMonth().toString().padStart(2, '0');
   const day = date.getDate().toString().padStart(2, '0');
   const today = `${year}-${month}-${day}`;
+
   try {
     const { data } = await axios.get(
       `http://musicbrainz.org/ws/2/release-group/?query=tag:("power metal"+OR+"heavy metal")%20AND%20primarytype:album%20AND%20firstreleasedate:[${today} TO *]&fmt=json`
     );
-
+    console.log('api: ', data);
     return data;
   } catch (error) {
     Notify.failure(error.message);

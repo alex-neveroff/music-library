@@ -20,12 +20,7 @@ const ArtistDetails = () => {
     getArtist();
   }, [artistId]);
 
-  return (
-    <>
-      {artist && <h2>{artist.name}</h2>}
-      {artist && <ArtistInfo artist={artist} />}
-    </>
-  );
+  return <>{artist && <ArtistInfo artist={artist} />}</>;
 };
 
 export default ArtistDetails;

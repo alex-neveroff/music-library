@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ArtistsListSyled } from './ArtistsList.styled';
 
 const ArtistsList = ({ artists }) => {
   const location = useLocation();
 
   return (
-    <ul>
+    <ArtistsListSyled>
       {artists.map(artist => (
-        <li key={artist.id}>
+        <li className="artist-item" key={artist.id}>
           <Link to={`${artist.id}`} state={{ from: location }}>
-            {artist.name}
+            <p className="artist-info">
+              {artist.name} ({artist.area ? artist.area.name : 'Unknown'})
+            </p>
           </Link>
         </li>
       ))}
-    </ul>
+    </ArtistsListSyled>
   );
 };
 

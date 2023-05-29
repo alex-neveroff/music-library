@@ -6,6 +6,7 @@ export const FormStyled = styled.form`
   width: 600px;
   background-color: #fff;
   border-radius: 8px;
+  margin-bottom: 15px;
 
   .searchbar-button {
     display: inline-block;
